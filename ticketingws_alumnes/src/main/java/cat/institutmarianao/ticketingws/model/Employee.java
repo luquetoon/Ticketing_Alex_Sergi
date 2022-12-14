@@ -3,6 +3,8 @@ package cat.institutmarianao.ticketingws.model;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+
 /**
  * <p>
  * An employee that opens tickets. He can also close his own ticket.
@@ -18,6 +20,8 @@ import java.util.Objects;
  * @see Close
  *
  */
+
+@Entity
 public class Employee extends User implements Serializable {
 
 	private static final long serialVersionUID = 1L;

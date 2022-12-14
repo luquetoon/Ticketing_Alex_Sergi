@@ -3,9 +3,13 @@ package cat.institutmarianao.ticketingws.model;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+
 /**
  * Close of a ticket by a performer in a certain date
  */
+
+@Entity
 public class Close extends Action implements Serializable {
 
 	private static final long serialVersionUID = 1L;

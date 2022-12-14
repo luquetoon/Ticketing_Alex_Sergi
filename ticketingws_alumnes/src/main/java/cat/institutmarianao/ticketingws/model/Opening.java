@@ -3,10 +3,14 @@ package cat.institutmarianao.ticketingws.model;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+
 /**
  * Opening of a ticket by an employee in a certain date
  *
  */
+
+@Entity
 public class Opening extends Action implements Serializable {
 
 	private static final long serialVersionUID = 1L;

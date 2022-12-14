@@ -3,6 +3,8 @@ package cat.institutmarianao.ticketingws.model;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+
 import org.hibernate.annotations.Formula;
 
 /**
@@ -26,6 +28,8 @@ import org.hibernate.annotations.Formula;
  * @see Technician
  * @see Supervisor
  */
+
+@Entity
 public abstract class User implements Serializable, Comparable<User> {
 
 	private static final long serialVersionUID = 1L;

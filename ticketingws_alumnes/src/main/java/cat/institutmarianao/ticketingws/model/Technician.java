@@ -3,6 +3,8 @@ package cat.institutmarianao.ticketingws.model;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+
 /**
  * <p>
  * A technical user, the one that can perform intervention actions. Can also
@@ -20,6 +22,8 @@ import java.util.Objects;
  * @see Intervention
  * @see Close
  */
+
+@Entity
 public class Technician extends User implements Serializable {
 
 	private static final long serialVersionUID = 1L;

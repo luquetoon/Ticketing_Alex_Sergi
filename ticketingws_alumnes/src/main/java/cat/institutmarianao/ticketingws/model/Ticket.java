@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
+import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
@@ -39,6 +40,8 @@ import org.hibernate.annotations.Formula;
  * @see Intervention
  * @see Close
  */
+
+@Entity
 public class Ticket implements Serializable {
 
 	private static final long serialVersionUID = 1L;

@@ -3,6 +3,9 @@ package cat.institutmarianao.ticketingws.model;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+
+
 /**
  * Assignació del ticket per part del supervisor a un tècnic indicant la
  * priority corresponent en una determinada date
@@ -15,6 +18,8 @@ import java.util.Objects;
  * No es pot actualitzar cap atribut a un valor incorrecte
  *
  */
+
+@Entity
 
 public class Assignment extends Action implements Serializable {
 	private static final long serialVersionUID = 1L;

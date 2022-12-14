@@ -3,6 +3,8 @@ package cat.institutmarianao.ticketingws.model;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+
 /**
  * Nova intervenció a una determinada date per resoldre el ticket, indicant les
  * hours dedicades i una breu descripció de l'actuació
@@ -14,6 +16,8 @@ import java.util.Objects;
  * No es pot actualitzar cap atribut a un valor incorrecte
  *
  */
+
+@Entity
 public class Intervention extends Action implements Serializable {
 
 	private static final long serialVersionUID = 1L;

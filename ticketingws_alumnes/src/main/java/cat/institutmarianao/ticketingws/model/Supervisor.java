@@ -2,6 +2,8 @@ package cat.institutmarianao.ticketingws.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+
 /**
  * <p>
  * A technician who supervises other ones. It performs assignments of tickets to
@@ -18,6 +20,8 @@ import java.io.Serializable;
  * @see Intervention
  * @see Close
  */
+
+@Entity
 public class Supervisor extends Technician implements Serializable {
 
 	private static final long serialVersionUID = 1L;

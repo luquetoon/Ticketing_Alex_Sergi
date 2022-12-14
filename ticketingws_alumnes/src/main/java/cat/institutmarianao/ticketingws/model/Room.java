@@ -3,9 +3,13 @@ package cat.institutmarianao.ticketingws.model;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+
 /**
  * A name, there the employee is
  */
+
+@Entity
 public class Room implements Serializable {
 
 	private static final long serialVersionUID = 1L;
