@@ -1,3 +1,4 @@
+
 package cat.institutmarianao.ticketingws.controllers;
 
 import java.util.Date;
@@ -7,6 +8,7 @@ import java.util.Optional;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.PositiveOrZero;
 
+import org.springframework.data.domain.Sort.Order;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import cat.institutmarianao.ticketingws.controllers.utils.SortParamsUtils;
 import cat.institutmarianao.ticketingws.model.Action;
 import cat.institutmarianao.ticketingws.model.Ticket;
 import cat.institutmarianao.ticketingws.model.Ticket.Category;
@@ -21,15 +24,15 @@ import cat.institutmarianao.ticketingws.model.Ticket.Status;
 
 @RestController
 @RequestMapping("/tickets")
-public class TicketController {
+public class TicketController<ticketService> {
 	/*
-	@Autowired
-	private UserService userService;
-	@Autowired
-	private TicketService ticketService;
-
-	@Autowired
-	private ActionService actionService;
+	 * @Autowired private UserService userService;
+	 * 
+	 * @Autowired
+	 * 
+	 * private TicketService ticketService;
+	 * 
+	 * @Autowired private ActionService actionService;
 	 */
 
 	@GetMapping("/find/all")
@@ -60,8 +63,7 @@ public class TicketController {
 	}
 
 	@GetMapping("/find/all/IN_PROCESS")
-	public List<Ticket> findAllInProcess(
-			@RequestParam(value = "page", required = false) @PositiveOrZero Integer page,
+	public List<Ticket> findAllInProcess(@RequestParam(value = "page", required = false) @PositiveOrZero Integer page,
 			@RequestParam(value = "size", required = false) @Positive Integer size,
 			@RequestParam(value = "sort", required = false, defaultValue = "date,asc") String[] sortFields,
 			@RequestParam(value = "reportedBy", required = false) String reportedBy,
@@ -74,8 +76,7 @@ public class TicketController {
 	}
 
 	@GetMapping("/find/all/HISTORICAL")
-	public List<Ticket> findAllHistorical(
-			@RequestParam(value = "page", required = false) @PositiveOrZero Integer page,
+	public List<Ticket> findAllHistorical(@RequestParam(value = "page", required = false) @PositiveOrZero Integer page,
 			@RequestParam(value = "size", required = false) @Positive Integer size,
 			@RequestParam(value = "sort", required = false, defaultValue = "date,asc") String[] sortFields,
 			@RequestParam(value = "reportedBy", required = false) String reportedBy,
@@ -100,34 +101,34 @@ public class TicketController {
 	}
 
 	@GetMapping("/open")
-	public Ticket open(@RequestParam(value = "performer", required = true) String performerId, 
-						@RequestParam(value = "category", required = true) Category category, 
-						@RequestParam(value = "description", required = true) String description) {
+	public Ticket open(@RequestParam(value = "performer", required = true) String performerId,
+			@RequestParam(value = "category", required = true) Category category,
+			@RequestParam(value = "description", required = true) String description) {
 		/* ToDo */
 		return null;
 	}
-	
+
 	@GetMapping("/assignment")
-	public Ticket assignment(@RequestParam(value = "ticket", required = true) Long ticketId, 
-							@RequestParam(value = "performer", required = true) String supervisorId, 
-							@RequestParam(value = "technician", required = true) String technicianId, 
-							@RequestParam(value = "priority", required = true) Integer priority) throws Exception {
+	public Ticket assignment(@RequestParam(value = "ticket", required = true) Long ticketId,
+			@RequestParam(value = "performer", required = true) String supervisorId,
+			@RequestParam(value = "technician", required = true) String technicianId,
+			@RequestParam(value = "priority", required = true) Integer priority) throws Exception {
 		/* ToDo */
 		return null;
 	}
-	
+
 	@GetMapping("/intervention")
-	public Ticket intervention(@RequestParam(value = "ticket", required = true) Long ticketId, 
-								@RequestParam(value = "performer", required = true) String technicianId, 
-								@RequestParam(value = "duration", required = true) Integer duration, 
-								@RequestParam(value = "description", required = true) String description) {
+	public Ticket intervention(@RequestParam(value = "ticket", required = true) Long ticketId,
+			@RequestParam(value = "performer", required = true) String technicianId,
+			@RequestParam(value = "duration", required = true) Integer duration,
+			@RequestParam(value = "description", required = true) String description) {
 		/* ToDo */
 		return null;
 	}
-	
+
 	@GetMapping("/close")
-	public Ticket close(@RequestParam(value = "ticket", required = true) Long ticketId, 
-						@RequestParam(value = "performer", required = true) String performerId) {
+	public Ticket close(@RequestParam(value = "ticket", required = true) Long ticketId,
+			@RequestParam(value = "performer", required = true) String performerId) {
 		/* ToDo */
 		return null;
 	}
