@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+
 /**
  * <p>
  * Represents any performed action by a user on a ticket in a certain date. They
@@ -37,7 +39,7 @@ import java.util.Objects;
  * @see Technician
  * @see Supervisor
  */
-
+@Entity
 public abstract class Action implements Serializable {
 
 	private static final long serialVersionUID = 1L;
