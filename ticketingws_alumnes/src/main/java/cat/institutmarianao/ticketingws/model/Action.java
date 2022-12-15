@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.Objects;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  * <p>
@@ -53,7 +54,7 @@ public abstract class Action implements Serializable {
 	public enum Type {
 		OPENING, ASSIGNMENT, INTERVENTION, CLOSE
 	}
-
+	@Id
 	protected Long id;
 
 	protected Type type;
