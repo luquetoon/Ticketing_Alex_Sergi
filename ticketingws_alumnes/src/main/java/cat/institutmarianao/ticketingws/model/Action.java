@@ -61,7 +61,7 @@ public abstract class Action implements Serializable {
 	protected Type type;
 
 	protected User performer;
-
+	@Column
 	protected Date date;
 
 	protected Ticket ticket;
