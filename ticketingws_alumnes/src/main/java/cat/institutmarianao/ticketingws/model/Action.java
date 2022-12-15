@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -56,7 +57,7 @@ public abstract class Action implements Serializable {
 	}
 	@Id
 	protected Long id;
-
+	@Column
 	protected Type type;
 
 	protected User performer;
